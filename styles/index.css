@@ -1,0 +1,15 @@
+nav li {
+    text-transform: uppercase;
+}
+
+#reviews {
+    min-height: 100vh;
+}
+
+footer {
+    padding: 1em 0;
+}
+
+footer i {
+    color: white;
+}
