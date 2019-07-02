@@ -12,7 +12,8 @@ const assets = [
     '/script/materialize.min.js',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
     'https://use.fontawesome.com/releases/v5.7.0/css/all.css',
-    '/script/app.js'
+    '/script/app.js',
+    '/script/db.js'
 ];
 
 // limit the size of the cache function
@@ -60,7 +61,7 @@ self.addEventListener('fetch', (e) => {
                 })
             })
         }).catch(() => {
-            if(e.request.url.indexOf('.html') > -1) {
+            if(e.request.url.indexOf('.html') > -1 || e.request.url.indexOf('.php') > -1) {
                 return caches.match('/pages/404.html');
             }
         })

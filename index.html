@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
     <!-- googlefonts file -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- materialize css file -->
     <link rel="stylesheet" href="styles/materialize.min.css" />
     <!-- custom stylesheet file -->
     <link rel="stylesheet" href="styles/index.css" />
     <!-- manifest.json for PWA -->
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="manifest.json" />
     <!-- ios support -->
-    <link rel="apple-touch-icon" href="/img/icons/icon-96x96.png"/>
-    <meta name="apple-mobile-web-app-status-bar" content="#AA7700"/>
-    <meta name="theme-color" content="#FFE1C4"/>  
+    <!-- <link rel="apple-touch-icon" href="/img/icons/icon-96x96.png" /> -->
+    <meta name="apple-mobile-web-app-status-bar" content="#AA7700" />
+    <meta name="theme-color" content="#FFE1C4" />
 
     <title>Food Splash - A Complete Food Review and Guide</title>
 </head>
@@ -52,8 +52,12 @@
     <!-- banner section -->
 
     <!-- main content section -->
-    <div id="reviews" class="container">
-        
+    <div class="container">
+        <div class="row">
+            <div id="reviews" class="col s12">
+                
+            </div>
+        </div>
     </div>
 
     <!-- footer section -->
@@ -85,11 +89,33 @@
         </div>
     </footer>
 
+    <!-- firebase firestore init -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDE7pBYDRDc2dXsxFyufN5NrJWkeNStWOU",
+            authDomain: "food-splash-eview.firebaseapp.com",
+            databaseURL: "https://food-splash-eview.firebaseio.com",
+            projectId: "food-splash-eview",
+            storageBucket: "",
+            messagingSenderId: "285434299214",
+            appId: "1:285434299214:web:e07d9416078bd6a4"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+
     <!-- materialize js script -->
     <script src="script/materialize.min.js"></script>
     <!-- custom js script -->
     <script src="script/index.js"></script>
     <script src="script/app.js"></script>
+    <script src="script/db.js"></script>
 </body>
 
 </html>
