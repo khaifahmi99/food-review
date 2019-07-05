@@ -95,12 +95,12 @@
                     <label for="stars">Stars Rating</label>
                 </div>
                 <div class="input-field col s12 l4">
-                    <select id="fixedPrice">
+                    <select id="exactPrice">
                         <option value="" selected disable>Choose your option</option>
                         <option value="true">Fixed</option>
                         <option value="false">Approximately</option>
                     </select>
-                    <label for="fixedPrice">Price Type</label>
+                    <label for="exactPrice">Price Type</label>
                 </div>
                 <div class="input-field col s12 l4">
                     <input type="text" placeholder="eg. 4.50" id="price" class="validate">
@@ -113,13 +113,15 @@
                         <option value="AUD">Australian Dollars (AUD)</option>
                         <option value="USD">American Dollars (USD)</option>
                     </select>
-                    <label for="fixedPrice">Price Type</label>
+                    <label for="currency">Price Type</label>
                 </div>
                 <div class="input-field col s12 l4">
                     <textarea id="comments" class="materialize-textarea"></textarea>
                     <label for="comments">Comments</label>
                 </div>
-                <input type="submit" value="Add Review" class="btn blue lighten-2 white-text">
+                <div class="input-field col s12 center-align">
+                    <button class="btn blue lighten-2 white-text">Add Review</button>
+                </div>
             </div>
         </form>
             </div>';
@@ -169,11 +171,33 @@
         </div>
     </footer>
 
+    <!-- firebase firestore init -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDE7pBYDRDc2dXsxFyufN5NrJWkeNStWOU",
+            authDomain: "food-splash-eview.firebaseapp.com",
+            databaseURL: "https://food-splash-eview.firebaseio.com",
+            projectId: "food-splash-eview",
+            storageBucket: "",
+            messagingSenderId: "285434299214",
+            appId: "1:285434299214:web:e07d9416078bd6a4"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+
     <!-- materialize js script -->
     <script src="/script/materialize.min.js"></script>
     <!-- custom js script -->
     <script src="/script/index.js"></script>
     <script src="/script/app.js"></script>
+    <script src="/script/manage.js"></script>
 </body>
 
 </html>

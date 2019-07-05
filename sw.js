@@ -1,5 +1,5 @@
-const staticCacheName = 'static-cache-v2';
-const dynamicCacheName = 'dynamic-cache-v2';
+const staticCacheName = 'static-cache-v1';
+const dynamicCacheName = 'dynamic-cache-v1';
 
 const assets = [
     '/',
@@ -20,7 +20,7 @@ const assets = [
 const cacheSizeLimit = (name, size) => {
     caches.open(name).then((cache) => {
         cache.keys().then((keys) => {
-            if(keys.length > size) {
+            if (keys.length > size) {
                 cache.delete(keys[0]).then(cacheSizeLimit(name, size));
             }
         })
@@ -61,10 +61,9 @@ self.addEventListener('fetch', (e) => {
                 })
             })
         }).catch(() => {
-            if(e.request.url.indexOf('.html') > -1 || e.request.url.indexOf('.php') > -1) {
+            if (e.request.url.indexOf('.html') > -1 || e.request.url.indexOf('.php') > -1) {
                 return caches.match('/pages/404.html');
             }
         })
     )
 });
-

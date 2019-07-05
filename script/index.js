@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menu = document.querySelectorAll('.sidenav-menu');
-    M.Sidenav.init(menu, {edge: 'right'});
+    M.Sidenav.init(menu, { edge: 'right' });
 
     const select = document.querySelectorAll('select');
     M.FormSelect.init(select);
